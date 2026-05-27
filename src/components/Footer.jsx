@@ -1,5 +1,5 @@
 export function Footer() {
   return <footer>
-    <a href="#">Github Repo</a>
+    <a href="https://github.com/Chinonye1/Apartment-Rental">Github Repo</a>
   </footer>;
 }
