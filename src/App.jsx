@@ -1,7 +1,7 @@
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { Sidebar } from './components/Sidebar'
-import Apartments from './components/Apartments'
+import ItemCard from './components/ItemCard'
 
 
 
@@ -14,7 +14,7 @@ function App() {
 <Footer/>
 
 <Sidebar/>
-<Apartments/>
+<ItemCard/>
 
     </>
   )
