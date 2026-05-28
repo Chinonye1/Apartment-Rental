@@ -47,7 +47,7 @@ object-fit: cover;
 .card {
 overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  
   
   gap: 2rem;
   justify-content: space-around;
