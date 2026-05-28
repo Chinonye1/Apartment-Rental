@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function ItemCardSummary(props) {
     
    
@@ -10,10 +12,15 @@ export function ItemCardSummary(props) {
                 <img src={props.ItemDetails.picture_url} alt="" />
 
                 <h4 className="location">{props.ItemDetails.host_location}</h4>
+              
+                <h4>{props.ItemDetails.price}</h4>
+                  <h5>Only{props.ItemDetails.host_listings_count} left at this price on Holiday Comfort Homes</h5>
+                  <h4>{props.ItemDetails.property_type}- {props.ItemDetails.bedrooms} bedroom. {props.ItemDetails.bathrooms} bathroom</h4>
+                  <h5></h5>
+                  
+                  <h5>Review:{props.ItemDetails.review_scores_value} Star</h5>
 
-                <div className="content">
-                  <p>{props.ItemDetails.description}</p>
-                </div>
+        
 
                 <button
                   className="delete-btn"
@@ -23,6 +30,13 @@ export function ItemCardSummary(props) {
                 >
                   delete
                 </button>
+
+                <Link to={`/details/${props.ItemDetails.id}`}>
+                <button>More Details</button>
+                </Link>
+
+                
+                
                 
 
                 
