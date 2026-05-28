@@ -1,12 +1,14 @@
 import logo from "../assets/logo.jpg";
+
+
 export function Navbar() {
   return (
-    <>
-      <div style={{ display: "flex" }}>
-        <h3 style={{ color: "darkblue" }}>Holiday Comfort Homes</h3>
-
-        <img src={logo} alt="logo-image" style={{ width: 60, height: 50 }} />
+    <header className="navbar">
+      <div className="brand">
+        <h1>Holiday Comfort Homes</h1>
+        <p>Find your next stay in minutes</p>
       </div>
-    </>
+      <img src={logo} alt="Holiday Comfort Homes logo" className="logo" />
+    </header>
   );
 }

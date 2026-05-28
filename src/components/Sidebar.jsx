@@ -1,6 +1,6 @@
 export function Sidebar() {
-    return <>
+    return <aside className="sidebar">
     <a href="#">Home Page and About</a>
-  </>;
+  </aside>;
     
 }
