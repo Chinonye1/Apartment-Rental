@@ -14,7 +14,7 @@ export default function ItemCard() {
   return (
     <div className="card">
       {apartmentList.map((element) => {
-        return <ItemCardSummary key={element.id} ItemDetails={element}/>
+        return <ItemCardSummary key={element.id} ItemDetails={element} onDelete={handleDeleteItem}/>
       })}
     </div>
   );

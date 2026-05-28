@@ -14,6 +14,14 @@ export function ItemCardSummary(props) {
                 <div className="content">
                   <p>{props.ItemDetails.description}</p>
                 </div>
+
+                <button
+                  onClick={() => {
+                    props.onDelete(element.id);
+                  }}
+                >
+                  delete
+                </button>
                 
 
                 
