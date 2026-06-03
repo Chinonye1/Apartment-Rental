@@ -9,6 +9,7 @@ import ItemCard from "./pages/ItemCard";
 import { AboutPage } from "./pages/AboutPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { ItemDetailsPage } from "./pages/ItemDetailsPage";
+import { UpdateApartmentPage } from "./pages/UpdateApartmentPage";
 
 function App() {
   const [apartmentList, setApartmentList] = useState(list.results);
@@ -25,6 +26,14 @@ function App() {
 
   function handleDeleteItem(id) {
     setApartmentList(apartmentList.filter((element) => element.id !== id));
+  }
+
+  function handleUpdateItem(updatedItem) {
+    setApartmentList(
+      apartmentList.map((element) =>
+        element.id === updatedItem.id ? updatedItem : element,
+      ),
+    );
   }
 
   const handleSubmit = (e) => {
@@ -91,6 +100,15 @@ function App() {
         <Route
           path="/details/:detailId"
           element={<ItemDetailsPage ItemArr={apartmentList} />}
+        />
+        <Route
+          path="/edit/:detailId"
+          element={
+            <UpdateApartmentPage
+              ItemArr={apartmentList}
+              onUpdate={handleUpdateItem}
+            />
+          }
         />
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>

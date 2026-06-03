@@ -10,6 +10,7 @@ export function CreateApartmentForm({
   onPriceChange,
   onAvailableChange,
   onSubmit,
+  submitLabel = "Add apartment",
 }) {
   return (
     <section className="create-form-shell">
@@ -40,7 +41,7 @@ export function CreateApartmentForm({
           <input
             type="url"
             name="picture_url"
-            placeholder="https://example.com/image.jpg"
+            placeholder=""
             value={imageUrl}
             onChange={(e) => onImageUrlChange(e.target.value)}
           />
@@ -72,7 +73,7 @@ export function CreateApartmentForm({
           />
         </label>
 
-        <button className="create-form-button">Add apartment</button>
+        <button className="create-form-button">{submitLabel}</button>
       </form>
     </section>
   );
