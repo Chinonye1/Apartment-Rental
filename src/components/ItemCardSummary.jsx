@@ -6,41 +6,48 @@ export function ItemCardSummary(props) {
       {" "}
       {props.ItemDetails.has_availability === true ? (
         <article className="listing-card">
-          <h2>{props.ItemDetails.name}</h2>
+          <div className="listing-image">
+            <img
+              src={props.ItemDetails.picture_url}
+              alt={props.ItemDetails.name}
+            />
+          </div>
 
-          <img src={props.ItemDetails.picture_url} alt="" />
+          <div className="listing-body">
+            <h2>{props.ItemDetails.name}</h2>
 
-          <h4 className="location">{props.ItemDetails.host_location}</h4>
+            <h4 className="location">{props.ItemDetails.host_location}</h4>
 
-          <h4>{props.ItemDetails.price}</h4>
-          <h5>
-            Only{props.ItemDetails.host_listings_count} left at this price on
-            Holiday Comfort Homes
-          </h5>
-          <h4>
-            {props.ItemDetails.property_type}- {props.ItemDetails.bedrooms}{" "}
-            bedroom. {props.ItemDetails.bathrooms} bathroom
-          </h4>
-          <h5></h5>
+            <p className="price">{props.ItemDetails.price}</p>
 
-          <h5>Review:{props.ItemDetails.review_scores_value} Star</h5>
+            <p className="meta">
+              {props.ItemDetails.property_type} — {props.ItemDetails.bedrooms}{" "}
+              bd · {props.ItemDetails.bathrooms} ba
+            </p>
 
-          <button
-            className="delete-btn"
-            onClick={() => {
-              props.onDelete(props.ItemDetails.id);
-            }}
-          >
-            delete
-          </button>
+            <p className="review">
+              Review: {props.ItemDetails.review_scores_value} ★
+            </p>
 
-          <Link to={`/details/${props.ItemDetails.id}`}>
-            <button>More Details</button>
-          </Link>
+            <div className="listing-actions">
+              <button
+                className="delete-btn"
+                onClick={() => {
+                  props.onDelete(props.ItemDetails.id);
+                }}
+              >
+                Delete
+              </button>
 
-          <Link to={`/edit/${props.ItemDetails.id}`}>
-            <button>Edit</button>
-          </Link>
+              <Link to={`/details/${props.ItemDetails.id}`}>
+                <button className="secondary">More Details</button>
+              </Link>
+
+              <Link to={`/edit/${props.ItemDetails.id}`}>
+                <button className="secondary">Edit</button>
+              </Link>
+            </div>
+          </div>
         </article>
       ) : null}
     </>
